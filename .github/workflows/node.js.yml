@@ -9,12 +9,12 @@ on:
   pull_request:
     branches: [ main ]
     
-# defaults:
-#   run:
-#     working-directory: core_ui
+defaults:
+  run:
+    working-directory: ./core_ui
 
-env:
-  working-directory: core_ui
+# env:
+#   working-directory: core_ui
 
     
 jobs:
@@ -39,8 +39,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-      working-directory: ${{ env.working-directory }}
+#       working-directory: ${{ env.working-directory }}
     - run: npm run build --if-present
-      working-directory: ${{ env.working-directory }}
+#       working-directory: ${{ env.working-directory }}
     - run: npm test
-      working-directory: ${{ env.working-directory }}
+#       working-directory: ${{ env.working-directory }}
