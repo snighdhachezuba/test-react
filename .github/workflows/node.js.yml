@@ -8,16 +8,20 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+    
+defaults:
+  run:
+    working-directory: core_ui
 
     
 jobs:
   build:
 
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: core_ui
+#     defaults:
+#       run:
+#         shell: bash
+#         working-directory: core_ui
 
     strategy:
       matrix:
