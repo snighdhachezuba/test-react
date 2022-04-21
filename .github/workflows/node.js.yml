@@ -8,6 +8,11 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+    
+defaults:
+    run:
+    # Mobile folder working directory.
+      working-directory: core_ui
    
 jobs:
   build:
@@ -18,11 +23,7 @@ jobs:
         node-version: [12.x, 14.x, 16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
-    steps:
-    - name: Experiment
-      run:      
-        cd /home/runner/work/test-react/test-react/core_ui
-        
+    steps:        
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
    
