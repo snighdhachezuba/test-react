@@ -12,6 +12,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults: 
+      run:
+        working-directory: core_ui
 
     strategy:
       matrix:
@@ -25,7 +28,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        working-directory: core_ui
+        
     
     - run: npm ci
       working-directory: core_ui
